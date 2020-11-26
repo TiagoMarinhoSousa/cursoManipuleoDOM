@@ -1,3 +1,4 @@
+( () => {//função criada para que o código não fique dentro do escopo global
 const criarTarefa = (evento) => {
     evento.preventDefault();
 
@@ -30,8 +31,10 @@ const BotaoConclui = () => {
 }
 
 const concluirTarefa = (evento) => {
-    const botaoConclui = evento.target;//para saber qual 
-    const tarefaCompleta = botaoConclui.parentElement;
+    const botaoConclui = evento.target;//capturamos qual elemento foi clicado
+    const tarefaCompleta = botaoConclui.parentElement;//propriedade parentElement para subir um nó na árvore
 
-    tarefaCompleta.classList.toggle('done');
+    tarefaCompleta.classList.toggle('done');//método toggle que vai adicionar a classe done quando clicarmos no botão
 }
+
+}) ();
